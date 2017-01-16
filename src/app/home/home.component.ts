@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { GithubService } from "../github.service";
 import { ActivatedRoute, Router } from "@angular/router";
 
+import { MaterialModule } from '@angular/material';
+
 import 'rxjs/';
 
 @Component({
@@ -20,10 +22,10 @@ export class HomeComponent implements OnInit {
   giveSomeAwesomeness(inx): void {
     if(this.toggle[inx] === undefined) {
       this.toggle[inx] = false;
-    } 
+    }
     this.toggle[inx] = this.toggle[inx] === false || undefined ? true : false;
   }
-  
+
   ngOnInit() {
     if (localStorage.getItem('token_id')) {
       this.githubService.getMembers()

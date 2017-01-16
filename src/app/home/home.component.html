@@ -1,3 +1,11 @@
+<!--<button md-button>Hop een knop</button>
+
+<button md-mini-fab>
+  <md-icon class="md-24">add</md-icon>
+</button>
+
+<i class="material-icons md-18 orange600">face</i>-->
+
 <div>
   <ul>
     <li class="user col-md-4 col-xs-6" *ngFor="let user of users; let i = index" (click)="giveSomeAwesomeness(i)">
@@ -9,10 +17,12 @@
         <i class="fa fa-heart"></i>
       </span>
       <div class="user__add-awesomeness" [hidden]="!toggle[i]">
-        <i class="fa fa-free-code-camp"></i> 
-        <i class="fa fa-heart"></i> 
+        <i class="fa fa-free-code-camp"></i>
+        <i class="fa fa-heart"></i>
         <i class="fa fa-handshake-o"></i>
       </div>
     </li>
   </ul>
 </div>
+
+
