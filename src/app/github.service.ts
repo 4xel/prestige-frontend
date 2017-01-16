@@ -64,10 +64,9 @@ export class GithubService {
   }
 
   getMembers() {
-    let accessToken =  localStorage.getItem('token_id') || this.accessToken.access_token; // get acces token in localStorage || this.accessToken.access_token
-    let headers = new Headers({ 'Authorization': this.client_basic_token }); // get With Basic gitHub Token
-    // let headers = new Headers({ 'Authorization': 'token ' + accessToken });
-    let options = new RequestOptions({ headers: headers }); // Create a request option
+    let accessToken =  localStorage.getItem('token_id') || this.accessToken.access_token; 
+    let headers = new Headers({ 'Authorization': this.client_basic_token });
+    let options = new RequestOptions({ headers: headers });
 
     return this.http.get("https://api.github.com/orgs/ordina-jworks/members", options)
       .map((res: Response) => {
