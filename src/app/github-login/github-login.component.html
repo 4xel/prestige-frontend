@@ -1,0 +1,12 @@
+<div *ngIf='name' class="profile" (click)="logOut()">
+  <p class="profile__name">{{name}}</p>
+  <div class="profile__avatar">
+    <img src="{{profileImage}}" alt="">
+  </div>
+</div>
+
+<p *ngIf='!name'>
+  <a class="btn btn-secondary pull-right" href="https://github.com/login/oauth/authorize?client_id=157f51eb7359f6ed9363&allow_signup=false">
+  Github Login
+  </a>
+</p>

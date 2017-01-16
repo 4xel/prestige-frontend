@@ -1,0 +1,43 @@
+.user {
+    padding: 10px;
+    min-height: 50px;
+    list-style: none;
+    border-left: 1px solid #e0e0e0;
+    cursor: pointer;
+    
+    .like__me {
+        visibility: hidden;
+    }
+
+    &:hover {
+        border-left: 2px solid rgba(230, 131, 8, 1);
+        
+        .like__me {
+            cursor: pointer;
+            visibility: visible; 
+            float: right;
+            margin-right: 5px;
+            font-weight: bold
+        }
+    }
+
+    &__avatar {
+        display: inline-block;
+        img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 1px solid #e0e0e0;
+        }
+    }
+
+    &__add-awesomeness {
+        margin-bottom: 10px;
+        text-align: center;
+        
+        .fa {
+            padding: 10px 10px 0;
+        }
+    }
+}
