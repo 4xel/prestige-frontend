@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from "@angular/core";
 import {SearchService} from "../../providers/search.service";
 import {FormControl} from "@angular/forms";
+import {Router} from "@angular/router";
 import "rxjs/add/operator/debounceTime";
 import "rxjs/add/operator/switchMap";
 
@@ -16,7 +17,7 @@ export class SearchComponent implements OnInit {
   searchTerm = new FormControl();
   searchResult: any[] = [];
 
-  constructor(private searchService: SearchService) {
+  constructor(private router: Router, private searchService: SearchService) {
   }
 
     ngOnInit() {
@@ -34,5 +35,9 @@ export class SearchComponent implements OnInit {
 
   private clearSearchResults() {
     this.searchResult = []
+  }
+
+  public openEmployeeDetailWithId(event, employee){
+      this.router.navigate(['employee-detail', employee.id]);
   }
 }
