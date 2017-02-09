@@ -1,7 +1,7 @@
 import {BrowserModule} from "@angular/platform-browser";
 import {NgModule, LOCALE_ID} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {AppRoutingModule} from "./app-routing.module";
 import {Md2Module} from "md2";
@@ -43,6 +43,7 @@ import {SearchService} from "./providers/search.service";
         CommonModule,
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpModule,
         MaterialModule.forRoot(),
         Md2Module.forRoot(),
