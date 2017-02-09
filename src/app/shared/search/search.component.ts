@@ -24,8 +24,8 @@ export class SearchComponent implements OnInit {
         this.searchTerm.valueChanges
             .debounceTime(400)
             .distinctUntilChanged()
-            .do((val) => { if (!(val.length > 0)) {this.clearSearchResults();} })
-            .filter(val => val.length > 0)
+            .do(val => { if (val && !(val.length > 0)) {this.clearSearchResults();} })
+            .filter(val => { if (val) { return val.length > 0 } })
             .do(() => this.clearSearchResults())
             .switchMap(searchTerm => this.searchService.searchEmployee(searchTerm))
             .subscribe(searchOutput => {
@@ -38,6 +38,8 @@ export class SearchComponent implements OnInit {
   }
 
   public openEmployeeDetailWithId(event, employee){
+      this.searchTerm.reset();
+      this.clearSearchResults();
       this.router.navigate(['employee-detail', employee.id]);
   }
 }
