@@ -37,7 +37,7 @@ export class SearchComponent implements OnInit {
     this.searchResult = []
   }
 
-  public openEmployeeDetailWithId(event, employee){
+  public openEmployeeDetailWithId(employee){
       this.searchTerm.reset();
       this.clearSearchResults();
       this.router.navigate(['employee-detail', employee.id]);

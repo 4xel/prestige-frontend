@@ -1,6 +1,9 @@
 <div class="search">
-  <md-input class="search__input" placeholder="Search" align="begin" [formControl]="searchTerm"></md-input>
-  <md-list>
-    <md-list-item *ngFor="let employee of searchResult" (click)="openEmployeeDetailWithId($event, employee)">{{ employee?.name }}</md-list-item>
-  </md-list>
+    <md-input class="search__input" placeholder="Search" align="begin" [formControl]="searchTerm"></md-input>
+    <md-list>
+        <md-list-item *ngFor="let employee of searchResult"
+                      (click)="openEmployeeDetailWithId(employee)">
+            <md-icon>person</md-icon>{{ employee?.name }}
+        </md-list-item>
+    </md-list>
 </div>
