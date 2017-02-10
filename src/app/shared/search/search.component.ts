@@ -24,7 +24,7 @@ export class SearchComponent implements OnInit {
         this.searchTerm.valueChanges
             .debounceTime(400)
             .distinctUntilChanged()
-            .do(val => { if (val && !(val.length > 0)) {this.clearSearchResults();} })
+            .do(val => { if (!val || (val && !(val.length > 0))) {this.clearSearchResults();} })
             .filter(val => { if (val) { return val.length > 0 } })
             .do(() => this.clearSearchResults())
             .switchMap(searchTerm => this.searchService.searchEmployee(searchTerm))
